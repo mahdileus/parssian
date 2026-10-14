@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bronze: #b17d56;
+  --color-ink: #000007;
+  --color-paper: #f7f7f7;
+}
+
+html { background: #f7f7f7; scroll-behavior: smooth; }
+body { color: var(--color-ink); font-family: var(--font-fa), system-ui, sans-serif; line-height: 1.9; }
+
+@keyframes hint { 0%,100% { transform: translateY(0); opacity: .5 } 50% { transform: translateY(8px); opacity: 1 } }
+.scroll-hint { animation: hint 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } .scroll-hint { animation: none } }
