@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 import { nav } from "@/content/site";
 
@@ -39,7 +40,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="#services" className="hidden rounded-full bg-ink px-5 py-1.5 text-sm text-paper transition-colors hover:bg-bronze sm:inline-block">ورود / ثبت نام</a>
+          <Link href="/login" className="rounded-full bg-ink px-5 py-1.5 text-sm text-paper transition-colors hover:bg-bronze sm:inline-block">ورود به پنل</Link>
           <button type="button" aria-label="منو" aria-expanded={open} onClick={() => setOpen(!open)} className="grid h-9 w-9 place-items-center rounded-full border border-bronze/30 md:hidden">
             <span className="relative block h-3 w-4">
               <span className={`absolute inset-x-0 h-px bg-ink transition-all ${open ? "top-1.5 rotate-45" : "top-0"}`} />
