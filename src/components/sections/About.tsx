@@ -1,11 +1,12 @@
 "use client";
+import { subsidiary } from "@/content/site";
 import Card from "../ui/Card";
 import { useInView } from "@/hooks/useInView";
 
 const values = [
-  { title: "ساده", text: "مسیرهای کوتاه و زبان روشن برای هر کار بانکی.", d: <path d="M5 12h14M12 5v14" /> },
-  { title: "قابل‌اعتماد", text: "امنیت و شفافیت در هر مرحله از خدمت.", d: <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" /> },
-  { title: "نزدیک", text: "از اپلیکیشن تا شعبه، همیشه در دسترس.", d: <><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /></> },
+  { title: "نیروی انسانی", text: "تأمین نیروی مورد نیاز ادارات، شعب و سازمان‌ها.", d: <path d="M5 12h14M12 5v14" /> },
+  { title: "مراکز رفاهی", text: "ارائه خدمات به میهمانان مراکز اقامتی و تفریحی.", d: <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" /> },
+  { title: "پشتیبانی", text: "انجام خدمات اداری، فنی و نگهداری.", d: <><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /></> },
 ];
 
 // The text comes into focus as the flower floats beside it.
@@ -24,10 +25,11 @@ export default function About() {
             <div style={focus(0)}>
               <h2 className="text-3xl font-bold text-ink md:text-4xl">درباره ما</h2>
               <span className="mt-4 block h-px bg-bronze transition-all delay-500 duration-1000" style={{ width: seen ? "100%" : "3rem" }} />
-              <p className="mt-6 text-lg text-ink/70">
-                معین پارسیان پارس یکی از بانک‌های خصوصی کشور است. این بخش را با متن رسمی معرفی بانک، چشم‌انداز و ارزش‌های سازمانی پر کنید.
+              <p className="mt-6 text-base leading-9 text-ink/70">
+                شرکت معین پارسیان پارس در زمینه تأمین نیروی انسانی و ارائه خدمات به بانک پارسیان، شرکت‌های تابعه و سایر مؤسسات دولتی و خصوصی فعالیت می‌کند. عمده فعالیت شرکت، پشتیبانی از ادارات و مدیریت‌های شعب بانک و خدمت‌رسانی به میهمانان مجتمع‌های فرهنگی، اقامتی و تفریحی آن است.
               </p>
             </div>
+            <div className="mt-6 rounded-2xl border border-bronze/25 p-4"><h3 className="font-semibold text-ink">{subsidiary.name}</h3><p className="mt-2 text-sm text-ink/65">{subsidiary.description}</p></div>
             <ul className="mt-8 grid gap-4 sm:grid-cols-3">
               {values.map((v, i) => (
                 <li key={v.title} style={focus(0.25 + i * 0.15)} className="border-t border-bronze/25 pt-4">

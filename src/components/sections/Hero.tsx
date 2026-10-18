@@ -9,9 +9,9 @@ const steps = [
 ];
 
 const facts = [
-  { title: "پارسیان من", text: "اپلیکیشن بانکی" },
-  { title: "خدمات غیرحضوری", text: "اینترنت بانک و پارس واریز" },
-  { title: "گروه مالی پارسیان", text: "لیزینگ، لوتوس، داده‌پردازی" },
+  { title: "نیروی انسانی", text: "تأمین نیرو برای سازمان‌ها" },
+  { title: "مراکز رفاهی", text: "اداره مراکز اقامتی و پذیرایی" },
+  { title: "خدمات سازمانی", text: "پشتیبانی، نگهداری و خدمات فنی" },
 ];
 
 export default function Hero() {
@@ -51,15 +51,15 @@ export default function Hero() {
           <h1 style={rise(0)} className="text-5xl font-bold leading-[1.15] text-ink md:text-7xl">معین پارسیان پارس</h1>
           <span style={rise(1)} className="mt-5 block h-px w-14 bg-bronze" />
           <p style={rise(2)} className="mt-5 max-w-md text-lg text-ink/65">
-            بانکداری ساده و آرام؛ از اپلیکیشن تا شعبه، یک مسیر روشن برای کارهای بانکی شما.
+            همراه سازمان‌ها در تأمین نیروی انسانی، اداره مراکز رفاهی و اقامتی و ارائه خدمات پشتیبانی.
           </p>
 
           <div style={rise(3)} className="mt-8 flex flex-wrap gap-3">
             <a href="#services" className="rounded-full bg-ink px-7 py-2.5 text-sm text-paper transition-colors hover:bg-bronze focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze">
               مشاهده خدمات
             </a>
-            <a href="#insights" className="rounded-full border border-bronze/50 px-7 py-2.5 text-sm text-ink transition-colors hover:border-bronze hover:bg-bronze/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze">
-              آمار و نمودار
+            <a href="#contact" className="rounded-full border border-bronze/50 px-7 py-2.5 text-sm text-ink transition-colors hover:border-bronze hover:bg-bronze/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze">
+              تماس با ما
             </a>
           </div>
 

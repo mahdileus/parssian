@@ -4,7 +4,7 @@ import "./globals.css";
 
 const fa = Vazirmatn({ subsets: ["arabic", "latin"], variable: "--font-fa" });
 
-export const metadata: Metadata = { title: "معین پارسیان پارس", description: "تجربه‌ی تعاملی معین پارسیان پارس" };
+export const metadata: Metadata = { title: "معین پارسیان پارس", description: "تأمین نیروی انسانی، اداره مراکز رفاهی و اقامتی و خدمات اداری و پشتیبانی شرکت معین پارسیان پارس" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

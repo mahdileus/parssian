@@ -18,11 +18,11 @@ export default function Services() {
   const [aud, setAud] = useState<string>("all");
   const [open, setOpen] = useState<string | null>(null);
   const idxOf = (title: string | null) => (title ? services.findIndex((x) => x.title === title) : -1);
-  const list = services.filter((s) => aud === "all" || s.aud === "all" || s.aud === aud);
+  const list = services.filter((s) => aud === "all" || s.aud === aud);
 
   return (
-    <Section id="services" side="start" title="خدمات" lead="هر خدمت یک مسیر کوتاه دارد. برای دیدن جزئیات، روی کارت بزنید.">
-      <div role="tablist" aria-label="نوع مشتری" className="mb-6 inline-flex rounded-full border border-bronze/25 bg-white/60 p-1 backdrop-blur-md">
+    <Section id="services" side="start" title="فعالیت‌ها و خدمات" lead="از تأمین نیروی انسانی تا اداره مراکز رفاهی و خدمات سازمانی؛ برای آشنایی با جزئیات، هر کارت را باز کنید.">
+      <div role="tablist" aria-label="حوزه فعالیت" className="mb-6 inline-flex rounded-full border border-bronze/25 bg-white/60 p-1 backdrop-blur-md">
         {audiences.map((a) => (
           <button key={a.id} role="tab" aria-selected={aud === a.id} onClick={() => { setAud(a.id); setOpen(null); bus.focus = -1; }}
             className={`rounded-full px-4 py-1 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-bronze ${aud === a.id ? "bg-ink text-paper" : "text-ink/65 hover:text-ink"}`}>
