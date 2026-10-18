@@ -3,7 +3,8 @@ import Footer from "@/components/layout/Footer";
 import LotusExperience from "@/components/lotus/LotusExperience";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
-import Insights from "@/components/sections/Insights";
+import Investment from "@/components/sections/Investment";
+import Contact from "@/components/sections/Contact";
 import About from "@/components/sections/About";
 import Group from "@/components/sections/Group";
 import Faq from "@/components/sections/Faq";
@@ -17,10 +18,11 @@ export default function Home() {
       <main id="top" className="relative z-10">
         <Hero />
         <Services />
-        <Insights />
+        <Investment />
         <About />
         <Group />
         <Faq />
+        <Contact />
         <Renew />
       </main>
       <div className="relative z-10"><Footer /></div>

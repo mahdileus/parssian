@@ -11,7 +11,7 @@ export default function Faq() {
   const list = faq.filter((f) => (f.q + f.a).includes(q.trim()));
 
   return (
-    <Section id="faq" title="سوالات متداول" lead="پاسخ کوتاه به پرسش‌های رایج. اگر پاسخ خود را پیدا نکردید، شعبه یا کانال‌های دیجیتال بانک کمک می‌کنند.">
+    <Section id="faq" title="سوالات متداول" lead="پاسخ به پرسش‌های رایج درباره حوزه فعالیت و خدمات شرکت معین پارسیان پارس.">
       <div className="max-w-3xl">
         <label className="relative mb-5 block">
           <span className="sr-only">جستجو در سوالات</span>
