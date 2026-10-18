@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState, type FormEvent, type KeyboardEvent } from "react";
+import { usePanelTransition } from "@/hooks/usePanelTransition";
 import Logo from "@/components/layout/Logo";
 import Extras, { BarChart, BankCard, Ico, Mark, Shapes, months, fa, navIcons, type Notif, type Tx } from "./Extras";
 import "./panels.css";
@@ -202,7 +203,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
     ? ["نمای کلی", "کاربران", "درخواست‌ها", "خدمات", "مدیریت محتوا", "سطوح دسترسی", "گزارش‌ها", "فعالیت‌ها", "پشتیبانی", "اعلان‌ها", "تنظیمات"]
     : ["نمای کلی", "حساب‌ها و کارت‌ها", "تراکنش‌ها", "درخواست‌های من", "مخاطبان", "گزارش‌ها", "پروفایل", "پشتیبانی", "اعلان‌ها", "تنظیمات"];
 
-  const [tab, setTab] = useState("نمای کلی");
+  const { tab, selectedTab, contentRef, selectTab } = usePanelTransition("نمای کلی");
   const [requests, setRequests] = useState(initialRequests);
   const [users, setUsers] = useState(initialUsers);
   const [search, setSearch] = useState("");
@@ -257,9 +258,10 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
   const unread = notifs.filter((n) => !n.read).length;
 
   function go(t: string) {
-    setTab(t);
-    setSearch("");
-    setStatusFilter("همه");
+    void selectTab(t, () => {
+      setSearch("");
+      setStatusFilter("همه");
+    });
   }
 
   function spend(amount: number, title: string, category: string) {
@@ -363,7 +365,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
           <p className="p-side-sub">{admin ? "پنل مدیریت" : "پنل کاربری"}</p>
           <nav aria-label="منوی پنل" className="flex flex-wrap gap-1 lg:flex-col">
             {tabs.map((t) => (
-              <button key={t} onClick={() => go(t)} aria-current={tab === t ? "page" : undefined} className="panel-nav">
+              <button key={t} onClick={() => go(t)} aria-current={selectedTab === t ? "page" : undefined} className="panel-nav">
                 <Ico n={navIcons[t] ?? "list"} size={16} />
                 {t}
               </button>
@@ -378,7 +380,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
         </aside>
 
         {/* Main */}
-        <main className="min-w-0 space-y-8">
+        <main ref={contentRef} className="panel-content min-w-0 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-sm panel-muted">{admin ? "مرکز مدیریت پارسیان" : `خوش آمدید، ${name}`}</p>
