@@ -7,7 +7,7 @@ export default function Logo({ light = false }: { light?: boolean }) {
         <path d="M24 12c-1 5-4 7-8 6 1-4 4-6 8-6Z" fill="currentColor" opacity=".55" className="origin-[16px_18px] transition-transform duration-500 group-hover:rotate-12" />
         <path d="M14 3c3 4 5 7 5 11a5 5 0 0 1-10 0c0-4 2-7 5-11Z" fill="currentColor" />
       </svg>
-      بانک پارسیان
+      معین پارسیان پارس
     </span>
   );
 }
