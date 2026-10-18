@@ -25,7 +25,7 @@ export default function About() {
               <h2 className="text-3xl font-bold text-ink md:text-4xl">درباره ما</h2>
               <span className="mt-4 block h-px bg-bronze transition-all delay-500 duration-1000" style={{ width: seen ? "100%" : "3rem" }} />
               <p className="mt-6 text-lg text-ink/70">
-                بانک پارسیان یکی از بانک‌های خصوصی کشور است. این بخش را با متن رسمی معرفی بانک، چشم‌انداز و ارزش‌های سازمانی پر کنید.
+                معین پارسیان پارس یکی از بانک‌های خصوصی کشور است. این بخش را با متن رسمی معرفی بانک، چشم‌انداز و ارزش‌های سازمانی پر کنید.
               </p>
             </div>
             <ul className="mt-8 grid gap-4 sm:grid-cols-3">

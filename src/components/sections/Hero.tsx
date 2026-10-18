@@ -48,7 +48,7 @@ export default function Hero() {
     <section ref={ref} id="hero" className="relative h-[170vh]">
       <div className="sticky top-0 flex h-screen items-start px-6 pt-28 md:items-center md:px-20 md:pt-0">
         <div className="w-full max-w-lg">
-          <h1 style={rise(0)} className="text-5xl font-bold leading-[1.15] text-ink md:text-7xl">بانک پارسیان</h1>
+          <h1 style={rise(0)} className="text-5xl font-bold leading-[1.15] text-ink md:text-7xl">معین پارسیان پارس</h1>
           <span style={rise(1)} className="mt-5 block h-px w-14 bg-bronze" />
           <p style={rise(2)} className="mt-5 max-w-md text-lg text-ink/65">
             بانکداری ساده و آرام؛ از اپلیکیشن تا شعبه، یک مسیر روشن برای کارهای بانکی شما.

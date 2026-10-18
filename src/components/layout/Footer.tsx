@@ -21,7 +21,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-paper/10">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-6 py-5 text-xs text-paper/50">
-          <span>© بانک پارسیان. همه حقوق محفوظ است.</span>
+          <span>© معین پارسیان پارس. همه حقوق محفوظ است.</span>
           <span>نمونه‌ی طراحی تعاملی؛ محتوا را با متن رسمی جایگزین کنید.</span>
         </div>
       </div>
