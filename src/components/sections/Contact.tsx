@@ -1,3 +1,4 @@
+import CooperationRequest from "@/components/home/CooperationRequest";
 import Section from "./Section";
 import Card from "../ui/Card";
 import { contact } from "@/content/site";
@@ -21,6 +22,7 @@ export default function Contact() {
           </ul>
         </Card>
       </address>
+      <CooperationRequest />
     </Section>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import ServiceGuide from "@/components/home/ServiceGuide";
 import { useState } from "react";
 import Section from "./Section";
 import Card from "../ui/Card";
@@ -22,6 +23,7 @@ export default function Services() {
 
   return (
     <Section id="services" side="start" title="فعالیت‌ها و خدمات" lead="از تأمین نیروی انسانی تا اداره مراکز رفاهی و خدمات سازمانی؛ برای آشنایی با جزئیات، هر کارت را باز کنید.">
+      <ServiceGuide />
       <div role="tablist" aria-label="حوزه فعالیت" className="mb-6 inline-flex rounded-full border border-bronze/25 bg-white/60 p-1 backdrop-blur-md">
         {audiences.map((a) => (
           <button key={a.id} role="tab" aria-selected={aud === a.id} onClick={() => { setAud(a.id); setOpen(null); bus.focus = -1; }}
