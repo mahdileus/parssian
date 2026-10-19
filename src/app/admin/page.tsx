@@ -1,3 +1,3 @@
-import Panel from "@/components/panels/Panel";
-export const metadata = { title: "پنل مدیریت | پارسیان" };
-export default function AdminPage() { return <Panel admin />; }
+import AdminPanel from "@/components/admin/AdminPanel";
+export const metadata = { title: "پنل ادمین | معین پارسیان پارس" };
+export default function AdminPage() { return <AdminPanel />; }

@@ -1,0 +1,23 @@
+.admin-sidebar { max-height:calc(100svh - 48px); display:flex; flex-direction:column; }
+.admin-menu-container { min-height:0; display:flex; flex-direction:column; }
+.admin-sidebar .admin-menu { display:flex; flex-direction:column; flex-wrap:nowrap; gap:4px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#ffffff30 transparent; padding:0 2px; }
+.admin-menu .panel-nav { align-items:flex-start; line-height:1.9; flex-shrink:0; }
+.admin-menu .panel-nav svg { margin-top:4px; }
+.admin-menu .panel-nav span { min-width:0; }
+.admin-menu-search { display:flex; gap:9px; align-items:center; border:1px solid #ffffff20; border-radius:10px; margin-bottom:14px; padding:10px; color:#aab0b6; }
+.admin-menu-search input { min-width:0; width:100%; background:transparent; font-size:12px; color:#fff; outline:none; }
+.admin-menu-search:focus-within { outline:2px solid #fff; outline-offset:2px; }
+.admin-sidebar-footer { display:flex; flex-wrap:wrap; gap:14px; border-top:1px solid #ffffff1a; margin-top:16px; padding:14px 6px 0; color:#aab0b6; font-size:11px; }
+.admin-preview { padding:12px 16px; border:1px solid var(--line); border-radius:12px; color:var(--muted); background:var(--accent-soft); }
+.admin-module-card { transition:border-color .2s,background .2s; cursor:pointer; }
+.admin-module-card:hover { border-color:var(--muted); background:var(--surface); }
+.admin-menu-toggle { display:none; }
+@media(max-width:1023px) { .admin-sidebar { max-height:none; } .admin-menu-toggle { display:inline-flex; gap:8px; font-size:12px; padding:10px 0; color:#e9eaec; } .admin-sidebar .p-side-sub { display:block; margin-block:12px; } .admin-menu-container { display:none; } .admin-menu-container[data-open="true"] { display:flex; margin-top:8px; } .admin-sidebar .admin-menu { max-height:50svh; padding-bottom:4px; } .admin-menu .panel-nav { width:100%; white-space:normal; } }
+@media(prefers-reduced-motion:reduce) { .admin-module-card { transition:none; } }
+.admin-menu-group { flex-shrink:0; }
+.admin-menu .panel-nav[data-active="true"]:not([aria-current="page"]) { color:#fff; background:#ffffff0c; }
+.admin-chevron { margin-inline-start:auto; transition:rotate .25s; }
+.admin-chevron[data-open="true"] { rotate:180deg; }
+.admin-submenu { margin:4px 20px 10px 6px; padding-inline-start:10px; border-inline-start:1px solid #ffffff20; }
+.admin-submenu .panel-nav { font-size:12px; padding:8px 10px; }
+@media(prefers-reduced-motion:reduce) { .admin-chevron { transition:none; } }
