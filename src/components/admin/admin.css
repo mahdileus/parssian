@@ -21,3 +21,4 @@
 .admin-submenu { margin:4px 20px 10px 6px; padding-inline-start:10px; border-inline-start:1px solid #ffffff20; }
 .admin-submenu .panel-nav { font-size:12px; padding:8px 10px; }
 @media(prefers-reduced-motion:reduce) { .admin-chevron { transition:none; } }
+.admin-sidebar > a, .admin-sidebar > .admin-sidebar-footer { flex-shrink:0; }

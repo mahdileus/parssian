@@ -470,3 +470,10 @@
 
 /* Keep short tabs tall enough to avoid collapsing the panel viewport. */
 .panel-content { min-height: calc(100svh - 160px); }
+
+/* Keep this outside Tailwind's utility layer: the base sidebar position is unlayered. */
+@media (min-width: 1024px) {
+  .panel-sidebar { position: sticky; top: 24px; max-height: calc(100svh - 48px); display: flex; flex-direction: column; }
+  .panel-sidebar > nav { min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .panel-sidebar > a, .panel-sidebar > .p-side-sub, .panel-sidebar > .p-side-foot { flex-shrink: 0; }
+}
