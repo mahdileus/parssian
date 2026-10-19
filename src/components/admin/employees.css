@@ -1,0 +1,33 @@
+.employee-section { overflow:hidden; }
+.employee-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding:24px; }
+.employee-search { display:flex; align-items:center; gap:10px; border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:11px 14px; width:min(100%,340px); }
+.employee-search input { min-width:0; width:100%; outline:none; font-size:12px; background:transparent; }
+.employee-search:focus-within { outline:2px solid var(--ink); outline-offset:2px; }
+.employee-filters { display:flex; flex-wrap:wrap; align-items:end; gap:14px; padding:0 24px 20px; }
+.employee-filters label { display:grid; gap:6px; font-size:11px; color:var(--muted); }
+.employee-filters select { border:1px solid var(--line); border-radius:10px; background:var(--surface); padding:8px 12px; min-width:150px; color:var(--ink); font-size:12px; }
+.employee-note { padding:12px 24px; border-block:1px solid var(--line); background:var(--accent-soft); color:var(--muted); font-size:11px; line-height:2; }
+.employee-table-scroll { overflow-x:auto; scrollbar-width:thin; }
+.employee-table { width:100%; min-width:1320px; text-align:start; border-collapse:collapse; font-size:12px; }
+.employee-table thead { background:var(--accent-soft); }
+.employee-table th,.employee-table td { padding:18px 14px; white-space:nowrap; text-align:start; border-bottom:1px solid var(--line); }
+.employee-table thead th { font-size:11px; font-weight:500; color:var(--muted); }
+.employee-table tbody th { font-weight:500; }
+.employee-table tr[data-selected="true"] { background:var(--accent-soft); }
+.employee-table input { width:15px; height:15px; accent-color:var(--ink); }
+.employee-name { display:block; }
+.employee-status { display:inline-block; margin-top:6px; border-radius:99px; background:var(--accent-soft); padding:2px 8px; color:var(--muted); font-size:10px; }
+.employee-status.is-blocked { border:1px dashed var(--muted); background:transparent; }
+.employee-access { font-weight:500; }
+.employee-actions { display:flex; gap:6px; }
+.employee-actions button { display:inline-flex; align-items:center; gap:5px; padding:5px 8px; border:1px solid var(--line); border-radius:7px; background:var(--surface); color:var(--ink); font-size:11px; cursor:pointer; transition:background .2s; }
+.employee-actions button:hover { background:var(--accent-soft); }
+.employee-actions .employee-delete { color:var(--muted); }
+.employee-empty { text-align:center; padding:48px 20px; color:var(--muted); font-size:13px; }
+.employee-notice { padding:14px 24px; min-height:48px; font-size:12px; color:var(--muted); }
+.employee-dialog { position:fixed; margin:auto; width:min(540px,calc(100% - 32px)); max-height:calc(100svh - 40px); overflow:auto; padding:24px; border:1px solid var(--line); border-radius:20px; background:var(--strong); color:var(--ink); box-shadow:0 20px 70px #0003; }
+.employee-dialog::backdrop { background:#0a0c0e75; backdrop-filter:blur(4px); }
+.employee-dialog header { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:24px; }
+.employee-dialog h2 { font-size:16px; font-weight:600; }
+@media(max-width:600px) { .employee-toolbar { padding:20px; } .employee-search { width:100%; } .employee-filters { padding-inline:20px; gap:12px; } .employee-filters label { flex:1; } .employee-filters select { width:100%; min-width:0; } }
+@media(prefers-reduced-motion:reduce) { .employee-actions button { transition:none; } }

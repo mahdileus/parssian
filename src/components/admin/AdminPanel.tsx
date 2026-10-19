@@ -6,6 +6,7 @@ import LogoMark from "@/components/layout/LogoMark";
 import Logo from "@/components/layout/Logo";
 import { Ico, Shapes } from "@/components/panels/Extras";
 import { useFadeIn } from "@/components/motion/useFadeIn";
+import Employees, { initialEmployees } from "./Employees";
 import AdminEditor from "./AdminEditor";
 import { adminSections } from "./sections";
 import "@/components/panels/panels.css";
@@ -14,6 +15,7 @@ import "./admin.css";
 function normalize(value: string) { return value.replace(/ي/g, "ی").replace(/ك/g, "ک").replace(/[\s\u200c]+/g, "").trim(); }
 
 export default function AdminPanel() {
+  const [employees, setEmployees] = useState(initialEmployees);
   const [active, setActive] = useState("dashboard");
   const [query, setQuery] = useState("");
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -68,7 +70,7 @@ export default function AdminPanel() {
           {active === "dashboard" ? <>
             <section className="glass p-6"><h2 className="font-semibold">دسترسی سریع</h2><div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">{["employees", "payslips", "attendance", "letters"].map(id => { const item = adminSections.find(value => value.id === id)!; return <button type="button" key={id} className="glass-light flex items-center gap-3 p-4 text-start text-sm" onClick={() => navigate(id)}><Ico n={item.icon} /><span>{item.title}</span><span className="ms-auto" aria-hidden="true">←</span></button>; })}</div></section>
             <section><h2 className="mb-4 font-semibold">بخش‌های مدیریت</h2><div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">{adminSections.slice(1).map(item => <button type="button" key={item.id} className="glass admin-module-card p-5 text-start" onClick={() => navigate(item.id)}><Ico n={item.icon} size={22} /><h3 className="mt-4 text-sm font-semibold">{item.title}</h3><p className="panel-muted mt-2 text-xs leading-6">{item.description}</p></button>)}</div></section>
-          </> : section.editor ? <AdminEditor key={section.id} mode={section.editor} draft={drafts[section.id]} onChange={draft => setDrafts(current => ({ ...current, [section.id]: draft }))} /> : <section className="glass overflow-hidden">
+          </> : active === "employee-list" ? <Employees employees={employees} onChange={setEmployees} /> : section.editor ? <AdminEditor key={section.id} mode={section.editor} draft={drafts[section.id]} onChange={draft => setDrafts(current => ({ ...current, [section.id]: draft }))} /> : <section className="glass overflow-hidden">
             <div className="flex items-center gap-3 border-b border-[var(--line)] p-5"><Ico n={section.icon} /><h2 className="text-sm font-semibold">{section.title}</h2></div>
             <div className="overflow-x-auto"><table className="w-full text-start text-sm"><caption className="sr-only">فهرست {section.title}</caption><thead><tr>{section.columns.map(column => <th key={column} className="whitespace-nowrap px-5 py-4 text-start text-xs font-medium panel-muted">{column}</th>)}</tr></thead><tbody><tr><td colSpan={section.columns.length} className="px-5 py-16 text-center"><div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-full border border-[var(--line)]"><Ico n={section.icon} size={22} /></div><p className="text-sm">هنوز اطلاعاتی برای نمایش وجود ندارد.</p><p className="panel-muted mx-auto mt-2 max-w-md text-xs leading-7">ساختار بخش «{section.title}» آماده است؛ ورود اطلاعات و عملیات این بخش در مرحله بعد تکمیل می‌شود.</p></td></tr></tbody></table></div>
           </section>}
