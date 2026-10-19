@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import ResponsiveSidebar from "@/components/panels/ResponsiveSidebar";
 import LogoMark from "@/components/layout/LogoMark";
 import Logo from "@/components/layout/Logo";
 import { Ico, Shapes } from "@/components/panels/Extras";
@@ -38,9 +39,9 @@ export default function AdminPanel() {
     <div className="panel-world admin-world" data-theme={dark ? "dark" : "light"}>
       <Shapes />
       <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-6 p-4 md:p-6 lg:grid-cols-[280px_1fr]">
-        <aside className="panel-sidebar admin-sidebar brand-sidebar self-start lg:sticky lg:top-6">
+        <ResponsiveSidebar className="admin-sidebar" open={mobileMenu} onOpenChange={setMobileMenu}>
           <Link href="/" className="inline-flex px-2" aria-label="معین پارسیان پارس؛ صفحه اصلی"><Logo light /></Link>
-          <div className="flex items-center justify-between px-2"><p className="p-side-sub !mx-0">پنل ادمین</p><button type="button" className="admin-menu-toggle" aria-expanded={mobileMenu} aria-controls="admin-menu" onClick={() => setMobileMenu(value => !value)}>بخش‌های مدیریت <span aria-hidden="true">⌄</span></button></div>
+          <p className="p-side-sub px-2">پنل ادمین</p>
           <div id="admin-menu" className="admin-menu-container" data-open={mobileMenu}>
             <label className="admin-menu-search"><span className="sr-only">جست‌وجوی بخش‌های مدیریت</span><Ico n="search" size={15} /><input type="search" placeholder="جست‌وجوی بخش‌ها…" value={query} onChange={event => setQuery(event.target.value)} /></label>
             <nav aria-label="منوی مدیریت" className="admin-menu">
@@ -59,7 +60,7 @@ export default function AdminPanel() {
           </div>
           <LogoMark className="brand-watermark admin-brand-watermark" size={160} />
           <div className="admin-sidebar-footer"><Link href="/dashboard">پنل کاربر ←</Link><Link href="/">بازگشت به سایت</Link></div>
-        </aside>
+        </ResponsiveSidebar>
         <main ref={contentRef} className="min-w-0 space-y-6">
           <header className="flex flex-wrap items-start justify-between gap-4">
             <div><p className="panel-muted text-xs">معین پارسیان پارس · مدیریت</p>{parent && <p className="panel-muted mt-2 text-xs">{parent.title}</p>}<h1 className="p-title mt-2 text-2xl font-bold md:text-3xl">{section.title}</h1><p className="panel-muted mt-3 text-sm">{section.description}</p></div>

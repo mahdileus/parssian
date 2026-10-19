@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState, type FormEvent, type KeyboardEvent } from "react";
 import { usePanelTransition } from "@/hooks/usePanelTransition";
+import ResponsiveSidebar from "./ResponsiveSidebar";
 import LogoMark from "@/components/layout/LogoMark";
 import Logo from "@/components/layout/Logo";
 import Extras, { BarChart, BankCard, Ico, Shapes, months, fa, navIcons, type Notif, type Tx } from "./Extras";
@@ -205,6 +206,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
     : ["نمای کلی", "حساب‌ها و کارت‌ها", "تراکنش‌ها", "درخواست‌های من", "مخاطبان", "گزارش‌ها", "پروفایل", "پشتیبانی", "اعلان‌ها", "تنظیمات"];
 
   const { tab, selectedTab, contentRef, selectTab } = usePanelTransition("نمای کلی");
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [requests, setRequests] = useState(initialRequests);
   const [users, setUsers] = useState(initialUsers);
   const [search, setSearch] = useState("");
@@ -259,6 +261,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
   const unread = notifs.filter((n) => !n.read).length;
 
   function go(t: string) {
+    setMobileMenu(false);
     void selectTab(t, () => {
       setSearch("");
       setStatusFilter("همه");
@@ -359,7 +362,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
 
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-6 p-4 md:p-6 lg:grid-cols-[250px_1fr]">
         {/* Sidebar */}
-        <aside className="panel-sidebar brand-sidebar self-start lg:sticky lg:top-6">
+        <ResponsiveSidebar open={mobileMenu} onOpenChange={setMobileMenu}>
           <Link href="/" aria-label="صفحهٔ اصلی" className="inline-flex px-1.5">
             <Logo light />
           </Link>
@@ -378,7 +381,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
             </Link>
             <LogoMark className="p-side-mark brand-watermark" size={150} />
           </div>
-        </aside>
+        </ResponsiveSidebar>
 
         {/* Main */}
         <main ref={contentRef} className="panel-content min-w-0 space-y-8">
