@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState, type FormEvent, type KeyboardEvent } from "react";
 import { usePanelTransition } from "@/hooks/usePanelTransition";
+import LogoMark from "@/components/layout/LogoMark";
 import Logo from "@/components/layout/Logo";
-import Extras, { BarChart, BankCard, Ico, Mark, Shapes, months, fa, navIcons, type Notif, type Tx } from "./Extras";
+import Extras, { BarChart, BankCard, Ico, Shapes, months, fa, navIcons, type Notif, type Tx } from "./Extras";
 import "./panels.css";
 
 type Request = {
@@ -358,7 +359,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
 
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-6 p-4 md:p-6 lg:grid-cols-[250px_1fr]">
         {/* Sidebar */}
-        <aside className="panel-sidebar self-start lg:sticky lg:top-6">
+        <aside className="panel-sidebar brand-sidebar self-start lg:sticky lg:top-6">
           <Link href="/" aria-label="صفحهٔ اصلی" className="inline-flex px-1.5">
             <Logo light />
           </Link>
@@ -375,7 +376,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
             <Link href="/login" className="p-side-link">
               خروج از نسخهٔ نمایشی
             </Link>
-            <Mark className="p-side-mark" />
+            <LogoMark className="p-side-mark brand-watermark" size={150} />
           </div>
         </aside>
 

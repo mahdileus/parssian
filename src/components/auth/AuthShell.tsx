@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import AuthBackground from "./AuthBackground";
+import LogoMark from "@/components/layout/LogoMark";
 import Logo from "@/components/layout/Logo";
 import FadeIn from "@/components/motion/FadeIn";
 import "./auth.css";
@@ -12,6 +13,7 @@ export default function AuthShell({ children, title, description }: { children: 
       <header className="auth-header"><Link href="/" aria-label="معین پارسیان پارس؛ صفحه اصلی"><Logo /></Link><Link href="/" className="auth-back">بازگشت به سایت <span aria-hidden="true">←</span></Link></header>
       <main className="auth-main">
         <FadeIn className="auth-card" distance={18}>
+          <Link href="/" className="brand-emblem" aria-label="بازگشت به صفحه اصلی"><LogoMark size={40} /></Link>
           <p className="auth-eyebrow">معین پارسیان پارس</p>
           <h1>{title}</h1><p className="auth-description">{description}</p>
           {children}

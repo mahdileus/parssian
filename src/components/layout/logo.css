@@ -1,0 +1,17 @@
+.brand-mark { flex-shrink:0; overflow:visible; }
+.brand-petal { transition:transform 700ms cubic-bezier(.22,.61,.36,1); }
+.brand-petal-start { transform-origin:12px 18px; }
+.brand-petal-end { transform-origin:16px 18px; }
+.brand-logo:hover .brand-petal-start,
+a:focus-visible .brand-petal-start,
+.brand-emblem:hover .brand-petal-start,
+.brand-sidebar:hover .brand-watermark .brand-petal-start { transform:rotate(-12deg); }
+.brand-logo:hover .brand-petal-end,
+a:focus-visible .brand-petal-end,
+.brand-emblem:hover .brand-petal-end,
+.brand-sidebar:hover .brand-watermark .brand-petal-end { transform:rotate(12deg); }
+.brand-emblem { display:grid; place-items:center; width:64px; height:64px; margin-bottom:24px; border:1px solid rgba(60,68,76,.16); border-radius:20px; color:#111316; background:linear-gradient(145deg,#ffffffb3,#ffffff40); box-shadow:inset 0 1px 0 #ffffffcc; }
+.brand-watermark { pointer-events:none; user-select:none; }
+.admin-brand-watermark { position:absolute; inset-inline-end:-30px; bottom:-38px; width:160px; height:160px; color:#fff; opacity:.045; }
+.brand-sidebar > :not(.admin-brand-watermark) { position:relative; }
+@media(prefers-reduced-motion:reduce) { .brand-petal { transition:none; transform:none !important; } }

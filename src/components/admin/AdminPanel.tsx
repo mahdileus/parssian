@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import LogoMark from "@/components/layout/LogoMark";
 import Logo from "@/components/layout/Logo";
 import { Ico, Shapes } from "@/components/panels/Extras";
 import { useFadeIn } from "@/components/motion/useFadeIn";
@@ -35,7 +36,7 @@ export default function AdminPanel() {
     <div className="panel-world admin-world" data-theme={dark ? "dark" : "light"}>
       <Shapes />
       <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-6 p-4 md:p-6 lg:grid-cols-[280px_1fr]">
-        <aside className="panel-sidebar admin-sidebar self-start lg:sticky lg:top-6">
+        <aside className="panel-sidebar admin-sidebar brand-sidebar self-start lg:sticky lg:top-6">
           <Link href="/" className="inline-flex px-2" aria-label="معین پارسیان پارس؛ صفحه اصلی"><Logo light /></Link>
           <div className="flex items-center justify-between px-2"><p className="p-side-sub !mx-0">پنل ادمین</p><button type="button" className="admin-menu-toggle" aria-expanded={mobileMenu} aria-controls="admin-menu" onClick={() => setMobileMenu(value => !value)}>بخش‌های مدیریت <span aria-hidden="true">⌄</span></button></div>
           <div id="admin-menu" className="admin-menu-container" data-open={mobileMenu}>
@@ -54,6 +55,7 @@ export default function AdminPanel() {
               {!matches.length && <p className="px-3 py-5 text-xs text-white/60">بخشی پیدا نشد.</p>}
             </nav>
           </div>
+          <LogoMark className="brand-watermark admin-brand-watermark" size={160} />
           <div className="admin-sidebar-footer"><Link href="/dashboard">پنل کاربر ←</Link><Link href="/">بازگشت به سایت</Link></div>
         </aside>
         <main ref={contentRef} className="min-w-0 space-y-6">
