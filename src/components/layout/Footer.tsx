@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import T1 from "./T1";
 import { nav, contact, services } from "@/content/site";
 
 const col = "mb-4 text-sm font-semibold text-paper";
@@ -25,6 +26,7 @@ export default function Footer({ homePath = "" }: { homePath?: string }) {
           <span>شرکت معین پارسیان پارس</span>
         </div>
       </div>
+      <div className="px-3 pb-6"><T1 /></div>
     </footer>
   );
 }
