@@ -10,6 +10,7 @@ html { background: #f7f7f7; scroll-behavior: smooth; }
 body { color: var(--color-ink); font-family: var(--font-fa), system-ui, sans-serif; line-height: 1.9; }
 
 .news-art { background: radial-gradient(ellipse at 25% 15%, #b17d5638, transparent 65%), #101013; }
+.news-art-light { background: radial-gradient(ellipse at 25% 15%, #b17d5626, transparent 65%), #f7f7f7; }
 .news-art::before, .news-art::after { content: ""; position: absolute; width: 15rem; height: 15rem; border: 1px solid #b17d5645; border-radius: 50% 50% 0 50%; transform: rotate(-35deg); top: -7rem; left: 20%; }
 .news-art::after { transform: rotate(-15deg); left: 32%; top: -6rem; }
 .news-slider { --swiper-theme-color: #b17d56; --swiper-pagination-bullet-inactive-color: #f7f7f7; --swiper-pagination-bullet-inactive-opacity: .25; padding-bottom: 3rem !important; }
