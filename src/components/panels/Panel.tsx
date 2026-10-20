@@ -231,12 +231,12 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
   useEffect(() => {
     try {
       if (localStorage.getItem("panel-theme") === "dark") setDark(true);
-    } catch {}
+    } catch { }
   }, []);
   useEffect(() => {
     try {
       localStorage.setItem("panel-theme", dark ? "dark" : "light");
-    } catch {}
+    } catch { }
   }, [dark]);
 
   // toast auto-dismiss
@@ -268,7 +268,7 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
     });
   }
 
-  function spend(amount: number, title: string, category: string) {
+  function spend(title: string, amount: number, category: string) {
     if (frozen) {
       setNotice("کارت نمونه مسدود است؛ ابتدا آن را فعال کنید.");
       return false;
@@ -339,9 +339,9 @@ export default function Panel({ admin = false }: { admin?: boolean }) {
     ...(admin
       ? []
       : [
-          { label: "انتقال وجه", run: () => setPay({ mode: "transfer" }) },
-          { label: "پرداخت قبض", run: () => setPay({ mode: "bill" }) },
-        ]),
+        { label: "انتقال وجه", run: () => setPay({ mode: "transfer" }) },
+        { label: "پرداخت قبض", run: () => setPay({ mode: "bill" }) },
+      ]),
     { label: dark ? "تم روشن" : "تم تیره", run: () => setDark((d) => !d) },
   ];
 

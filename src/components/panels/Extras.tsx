@@ -203,7 +203,7 @@ export type ExtraProps = {
   setNotifs: (n: Notif[]) => void;
   dark: boolean;
   setDark: (v: boolean) => void;
-  spend: (amount: number, title: string, category: string) => boolean;
+  spend: (title: string, amount: number, category: string) => boolean;
   onPay: (mode: "transfer" | "bill", contact?: string) => void;
 };
 
@@ -291,7 +291,7 @@ export default function Extras(p: ExtraProps) {
                 disabled={saved >= GOAL}
                 onClick={() => {
                   const amt = Math.min(a, GOAL - saved);
-                  if (p.spend(amt, "واریز به هدف پس‌انداز", "انتقال")) setSaved((s) => s + amt);
+                  if (p.spend("واریز به هدف پس‌انداز", amt, "انتقال")) setSaved((s) => s + amt);
                 }}
               >
                 {fa(a)}
