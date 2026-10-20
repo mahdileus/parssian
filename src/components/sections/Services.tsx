@@ -1,5 +1,6 @@
 "use client";
 
+import { activityScope } from "@/content/company";
 import ServiceGuide from "@/components/home/ServiceGuide";
 import { useState } from "react";
 import Section from "./Section";
@@ -23,6 +24,10 @@ export default function Services() {
 
   return (
     <Section id="services" side="start" title="فعالیت‌ها و خدمات" lead="از تأمین نیروی انسانی تا اداره مراکز رفاهی و خدمات سازمانی؛ برای آشنایی با جزئیات، هر کارت را باز کنید.">
+      <div className="mb-8 space-y-6 rounded-2xl border border-bronze/20 bg-white/75 p-6 backdrop-blur-md">
+        <h3 className="text-lg font-semibold">شرح فعالیت شرکت</h3>
+        {activityScope.map(item => <div key={item.title}><h4 className="font-medium text-ink">{item.title}</h4><p className="mt-2 text-sm leading-8 text-ink/70">{item.text}</p></div>)}
+      </div>
       <ServiceGuide />
       <div role="tablist" aria-label="حوزه فعالیت" className="mb-6 inline-flex rounded-full border border-bronze/25 bg-white/60 p-1 backdrop-blur-md">
         {audiences.map((a) => (

@@ -1,5 +1,6 @@
 "use client";
 import { subsidiary } from "@/content/site";
+import { companyOverview } from "@/content/company";
 import Card from "../ui/Card";
 import { useInView } from "@/hooks/useInView";
 
@@ -25,9 +26,9 @@ export default function About() {
             <div style={focus(0)}>
               <h2 className="text-3xl font-bold text-ink md:text-4xl">درباره ما</h2>
               <span className="mt-4 block h-px bg-bronze transition-all delay-500 duration-1000" style={{ width: seen ? "100%" : "3rem" }} />
-              <p className="mt-6 text-base leading-9 text-ink/70">
-                شرکت معین پارسیان پارس در زمینه تأمین نیروی انسانی و ارائه خدمات به بانک پارسیان، شرکت‌های تابعه و سایر مؤسسات دولتی و خصوصی فعالیت می‌کند. عمده فعالیت شرکت، پشتیبانی از ادارات و مدیریت‌های شعب بانک و خدمت‌رسانی به میهمانان مجتمع‌های فرهنگی، اقامتی و تفریحی آن است.
-              </p>
+              <div className="mt-6 space-y-5 text-base leading-9 text-ink/70">
+                {companyOverview.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+              </div>
             </div>
             <div className="mt-6 rounded-2xl border border-bronze/25 p-4"><h3 className="font-semibold text-ink">{subsidiary.name}</h3><p className="mt-2 text-sm text-ink/65">{subsidiary.description}</p></div>
             <ul className="mt-8 grid gap-4 sm:grid-cols-3">

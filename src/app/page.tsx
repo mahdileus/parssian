@@ -9,6 +9,7 @@ import About from "@/components/sections/About";
 import Group from "@/components/sections/Group";
 import Faq from "@/components/sections/Faq";
 import Renew from "@/components/sections/Renew";
+import Properties from "@/components/sections/Properties";
 import News from "@/components/sections/News";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <Investment />
         <About />
+        <Properties />
         <Group />
         <Faq />
         <Contact />

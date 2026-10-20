@@ -48,6 +48,15 @@ export default function LotusExperience() {
     // The scene fades out as the footer arrives; scrolling back up brings it back.
     gsap.to(wrap.current, { opacity: 0, ease: "none", scrollTrigger: { trigger: "#renew", start: "bottom 45%", end: "bottom 10%", scrub: true } });
     update();
+    // Tabs and customer introductions change the section positions after initial render.
+    let frame = 0;
+    const observer = new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => ScrollTrigger.refresh());
+    });
+    const main = document.querySelector("main");
+    if (main) observer.observe(main);
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
   });
 
   return (

@@ -17,11 +17,11 @@ export default function CustomerDirectory() {
         <label className="block w-full sm:max-w-sm"><span className="text-sm text-ink/70">جست‌وجوی مشتریان</span><input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="نام بانک یا شرکت را بنویسید" className="mt-2 w-full rounded-xl border border-bronze/30 bg-white/80 p-3 text-sm focus-visible:outline-2 focus-visible:outline-bronze" /></label>
         <p role="status" className="text-xs text-ink/55">{list.length.toLocaleString("fa-IR")} مورد از {customers.length.toLocaleString("fa-IR")} مشتری</p>
       </div>
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="grid gap-4 sm:grid-cols-2">
         {list.map(name => <li key={name}><Card hover className="flex h-full flex-col">
           <span aria-hidden="true" className="grid h-11 w-11 place-items-center rounded-full border border-bronze/40 text-lg font-bold text-bronze">{name.replace(/^شرکت /, "").charAt(0)}</span>
           <h3 className="mt-5 font-semibold text-ink">{name}</h3>
-          {customerDescriptions[name] && <details className="mt-4 text-sm text-ink/65"><summary className="cursor-pointer text-bronze focus-visible:outline-2 focus-visible:outline-bronze">معرفی مشتری</summary><p className="mt-3 leading-8">{customerDescriptions[name]}</p></details>}
+          {customerDescriptions[name] && <details className="mt-4 text-sm text-ink/65"><summary className="cursor-pointer text-bronze focus-visible:outline-2 focus-visible:outline-bronze">معرفی مشتری</summary><p className="mt-3 whitespace-pre-line leading-8">{customerDescriptions[name]}</p></details>}
           <span className="mt-5 block h-px w-8 bg-bronze" />
         </Card></li>)}
       </ul>
