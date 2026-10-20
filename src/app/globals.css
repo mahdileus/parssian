@@ -9,6 +9,15 @@
 html { background: #f7f7f7; scroll-behavior: smooth; }
 body { color: var(--color-ink); font-family: var(--font-fa), system-ui, sans-serif; line-height: 1.9; }
 
+.news-art { background: radial-gradient(ellipse at 25% 15%, #b17d5638, transparent 65%), #101013; }
+.news-art::before, .news-art::after { content: ""; position: absolute; width: 15rem; height: 15rem; border: 1px solid #b17d5645; border-radius: 50% 50% 0 50%; transform: rotate(-35deg); top: -7rem; left: 20%; }
+.news-art::after { transform: rotate(-15deg); left: 32%; top: -6rem; }
+.news-slider { --swiper-theme-color: #b17d56; --swiper-pagination-bullet-inactive-color: #f7f7f7; --swiper-pagination-bullet-inactive-opacity: .25; padding-bottom: 3rem !important; }
+.news-slider .swiper-slide { height: auto; }
+.news-slider .swiper-pagination-bullet { width: 8px; height: 8px; }
+.news-slider .swiper-pagination-bullet-active { width: 24px; border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) { .news-section *, .news-slider .swiper-wrapper { transition-duration: 0ms !important; } }
+
 @keyframes hint { 0%,100% { transform: translateY(0); opacity: .5 } 50% { transform: translateY(8px); opacity: 1 } }
 .scroll-hint { animation: hint 2.4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } .scroll-hint { animation: none } }

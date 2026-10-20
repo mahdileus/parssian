@@ -9,6 +9,7 @@ import About from "@/components/sections/About";
 import Group from "@/components/sections/Group";
 import Faq from "@/components/sections/Faq";
 import Renew from "@/components/sections/Renew";
+import News from "@/components/sections/News";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Faq />
         <Contact />
         <Renew />
+        <News />
       </main>
       <div className="relative z-10"><Footer /></div>
     </>
