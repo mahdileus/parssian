@@ -23,7 +23,7 @@ export default function Properties() {
 
   return (
     <Section id="properties" title="مجموعه‌ها و مراکز" lead="آشنایی با مجتمع‌های تجاری، اداری و اقامتی معرفی‌شده در سبد مجموعه‌های معین پارسیان پارس؛ از تهران تا مشهد.">
-      <div className="overflow-hidden rounded-3xl border border-bronze/25 bg-paper/95 backdrop-blur-md">
+      <div className="group rounded-2xl border border-bronze/25 bg-white/60 p-6 backdrop-blur-md  p-8 md:p-10">
         <div role="tablist" aria-label="انتخاب مجموعه" className="flex overflow-x-auto border-b border-bronze/20 px-3 sm:px-6">
           {properties.map((property, index) => (
             <button key={property.id} ref={el => { tabs.current[index] = el; }} type="button" role="tab" id={`property-tab-${property.id}`} aria-controls={`property-panel-${property.id}`} aria-selected={active === index} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)} onKeyDown={event => onKeyDown(event, index)} className={`shrink-0 border-b-2 px-4 py-5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-bronze sm:px-6 ${active === index ? "border-bronze font-semibold text-ink" : "border-transparent text-ink/55 hover:text-bronze"}`}>
